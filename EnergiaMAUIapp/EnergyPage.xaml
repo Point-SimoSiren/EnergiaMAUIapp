@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnergiaMAUIapp.EnergyPage"
+             Title="EnergyPage">
+    
+       
+            <ContentPage Title="Sähkö" IconImageSource="power_icon.png">
+
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+
+
+            <!-- Latausilmoitus -->
+            <Label x:Name="lataus" />
+
+
+            <!-- Sähkölistaus -->
+            <ListView x:Name="sahkoList" SelectionMode="Single" Margin="20, 0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+
+                            <ContentView Padding="5" MinimumHeightRequest="90">
+                                <Frame BorderColor="Silver" Padding="3">
+                                    <HorizontalStackLayout HorizontalOptions="CenterAndExpand" BackgroundColor="AliceBlue" Padding="0, 2">
+                                    <VerticalStackLayout>
+                                        
+                                        <Label Text="Pvm:"
+                                              HorizontalOptions="Center"
+                                               TextColor="Black"
+                                               FontSize="8"
+                                               VerticalOptions="Start" />
+
+                                        <Label Text="{Binding Pvm}"
+                                              HorizontalOptions="Center"
+                                               TextColor="Black"
+                                               FontSize="8"
+                                               VerticalOptions="StartAndExpand" />
+                                        </VerticalStackLayout>
+                                        
+                                        <VerticalStackLayout Margin="30, 0, 0, 0">
+                                            <Label Text="Summa:"
+                                        HorizontalOptions="Start"
+                                         TextColor="Blue"
+                                           FontSize="8"
+                                           VerticalOptions="StartAndExpand" />
+
+                                        <Label Text="{Binding Summa}"
+                                        HorizontalOptions="Start"
+                                         TextColor="Blue"
+                                           FontSize="8"
+                                           VerticalOptions="StartAndExpand" />
+                                        </VerticalStackLayout>
+
+                                        <VerticalStackLayout Margin="30, 0, 0, 0">
+                                            <Label Text="Kwh:"
+                                        HorizontalOptions="Start"
+                                         TextColor="Purple"
+                                           FontSize="8"
+                                            />
+                                        
+                                        <Label Text="{Binding Kwh}"
+                                        HorizontalOptions="Start"
+                                         TextColor="Purple"
+                                           FontSize="8"
+                                           VerticalOptions="StartAndExpand" />
+                                        
+                                    </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+                                </Frame>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+    </ContentPage>
+
+            <ContentPage Title="Kaukolämpö" IconImageSource="heat_icon.png">
+
+            </ContentPage>
+
+     
+</TabbedPage>
